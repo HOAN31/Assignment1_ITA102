@@ -1,0 +1,23 @@
+[
+    {
+        "id": "LT01",
+        "name": "mu",
+        "brand": "gici",
+        "price": 70000,
+        "quantity": 32
+    },
+    {
+        "id": "LT02",
+        "name": "ao",
+        "brand": "guci",
+        "price": 60000,
+        "quantity": 71
+    },
+    {
+        "id": "LT03",
+        "name": "mu",
+        "brand": "ligic",
+        "price": 20000,
+        "quantity": 61
+    }
+]
