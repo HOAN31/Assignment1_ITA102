@@ -142,7 +142,19 @@ def delete_product(products):
 #         display_all_products(found_products)
 #     else:
 #         print("Không tìm thấy sản phẩm nào phù hợp.")
-
+def search_product_by_name(products):
+    print("\n---TÌM KIẾM SẢN PHẨM ---")
+    keyword = input("Nhập tên sản phẩm cần tìm: ").lower()
+    found_products = []
+    
+    for p in products:
+        if keyword in p["name"].lower():
+            found_products.append(p)
+    
+    if len(found_products) > 0:
+        display_all_products(found_products)
+    else:
+        print("Không tìm thấy sả phẩm nào phù hợp từ khóa: ",keyword)
 # # 7) Hiển thị toàn bộ sản phẩm
 # def display_all_products(products):
 #     print("\n--- DANH SÁCH SẢN PHẨM ---")
@@ -173,3 +185,4 @@ def display_all_products(products):
         sl = p["quantity"]
         
         print("{:<5} | {:<30} | {:<15} | {:<12} | {:<5}".format(ma_id, ten, hang, gia, sl))
+
