@@ -154,4 +154,22 @@ def delete_product(products):
 #     print(f"{'ID':<5} | {'Tên sản phẩm':<30} | {'Thương hiệu':<15} | {'Giá':<12} | {'SL':<5}")
 #     print("-" * 77)
 #     for p in products:
+
 #         print(f"{p['id']:<5} | {p['name']:<30} | {p['brand']:<15} | {p['price']:<12} | {p['quantity']:<5}") 
+def display_all_products(products):
+    print("\n--- DANH SÁCH SẢN PHẨM ---")
+    if len(products) == 0:
+        print("Danh sách rỗng!")
+        return
+    
+    print("Mã ID | Tên sản phẩm             | Thương hiệu     | Giá bán       | Số lượng ")
+    print("-"*80)
+
+    for p in products:
+        ma_id = p["id"]
+        ten = p["name"]
+        hang = p["brand"]
+        gia = p["price"]
+        sl = p["quantity"]
+        
+        print("{:<5} | {:<30} | {:<15} | {:<12} | {:<5}".format(ma_id, ten, hang, gia, sl))
