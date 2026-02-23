@@ -121,11 +121,3 @@ def input_positive_int(message):
         except ValueError:
             print("Sai kiểu dữ liệu! Vui lòng nhập số nguyên.")
 
-# git add .
-# git commit -m "nội dung"
-# git push origin main
-
-# git checkout main
-# git merge <tên_nhánh_phụ>
-
-# git pull origin main
