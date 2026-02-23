@@ -15,7 +15,7 @@ def load_data():
 # 2) Lưu dữ liệu vào file
 def save_data(products):
     file = open(FILE_NAME,"w",encoding="utf-8")
-    json.dump(products, file)
+    json.dump(products, file, indent=4, ensure_ascii=False)
     file.close()
     
 

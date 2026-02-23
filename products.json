@@ -1,1 +1,30 @@
-[{"id": "LT01", "name": "mu", "brand": "gici", "price": 70000, "quantity": 32}, {"id": "LT02", "name": "ao", "brand": "guci", "price": 60000, "quantity": 71}, {"id": "LT04", "name": "giay", "brand": "nike", "price": 64275, "quantity": 54}, {"id": "LT05", "name": "bao tay", "brand": "liki", "price": 75000, "quantity": 75}]
+[
+    {
+        "id": "LT01",
+        "name": "mu",
+        "brand": "gici",
+        "price": 70000,
+        "quantity": 32
+    },
+    {
+        "id": "LT02",
+        "name": "ao",
+        "brand": "guci",
+        "price": 60000,
+        "quantity": 71
+    },
+    {
+        "id": "LT03",
+        "name": "mu",
+        "brand": "ligic",
+        "price": 20000,
+        "quantity": 61
+    },
+    {
+        "id": "LT04",
+        "name": "giay",
+        "brand": "nike",
+        "price": 394000,
+        "quantity": 80
+    }
+]

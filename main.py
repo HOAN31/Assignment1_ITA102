@@ -17,10 +17,13 @@ def main():
         
         if choice == '1':
             products = pm.add_product(products)
+            pm.save_data(products)
         elif choice == '2':
             pm.update_product(products)
+            pm.save_data(products)
         elif choice == '3':
             pm.delete_product(products)
+            pm.save_data(products)
         elif choice == '4':
             pm.search_product_by_name(products)
         elif choice == '5':
