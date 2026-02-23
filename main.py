@@ -1,4 +1,4 @@
-
+from statistics import inventory_summary
 import product_manager as pm 
 
 def main():
@@ -11,6 +11,7 @@ def main():
         print("3. Xóa sản phẩm")
         print("4. Tìm kiếm sản phẩm")
         print("5. Hiển thị tất cả sản phẩm")
+        print("6. Thống kê sản phẩm")
         print("0. Thoát")
         
         choice = input("Nhập lựa chọn của bạn (0-5): ")
@@ -28,6 +29,8 @@ def main():
             pm.search_product_by_name(products)
         elif choice == '5':
             pm.display_all_products(products)
+        elif choice == "6":
+            inventory_summary(products)
         elif choice == '0':
             pm.save_data(products) 
             print("Cảm ơn bạn đã sử dụng chương trình. Tạm biệt!")
