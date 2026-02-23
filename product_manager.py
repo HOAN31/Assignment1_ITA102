@@ -109,20 +109,13 @@ def display_all_products(products):
         
         print("{:<5} | {:<30} | {:<15} | {:<12} | {:<5}".format(ma_id, ten, hang, gia, sl))
         
-# 8Hàm nhập số nguyên không âm
-def input_positive_int(message):
-    while True:
-        try:
-            value = int(input(message))
-            if value < 0:
-                print("Không được nhập số âm! Vui lòng nhập lại.")
-                continue
-            return value
-        except ValueError:
-            print("Sai kiểu dữ liệu! Vui lòng nhập số nguyên.")
+
 
 # git add .
 # git commit -m "nội dung"
 # git push origin main
 
+# git checkout main
+# git merge <tên_nhánh_phụ>
 
+# git pull origin main
