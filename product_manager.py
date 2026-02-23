@@ -1,6 +1,4 @@
-
 import json 
-
 FILE_NAME = "products.json"
 
 # 1) Tải dữ liệu từ file
@@ -13,6 +11,7 @@ def load_data():
     except:
         print("Không tìm thấy file!")
         return[]
+
 # 2) Lưu dữ liệu vào file
 def save_data(products):
     file = open(FILE_NAME,"w",encoding="utf-8")
@@ -20,7 +19,7 @@ def save_data(products):
     file.close()
     
 
-# # 3) Thêm sản phẩm
+# 3) Thêm sản phẩm
 def add_product(products):
     print("\n--- THÊM SẢN PHẨM MỚI ---")
     
@@ -30,8 +29,8 @@ def add_product(products):
     
     name = input("Nhập tên sản phẩm mới: ")
     brand = input("Nhập tên thương hiệu: ")
-    price = int(input("Nhập giá sản phẩm: "))
-    quantity = int(input("Nhập số lượng tồn kho: "))
+    price = input_positive_int("Nhập giá sản phẩm: ")
+    quantity = input_positive_int("Nhập số lượng tồn kho: ")
     
     #Tạo dictionary cho sản phẩm mới
     product = {
@@ -47,19 +46,17 @@ def add_product(products):
     
     return products 
     
-    
-
 # 4) Cập nhật sản phẩm
 def update_product(products):
-    product_id = int(input("Nhập sản phẩm cần cập nhập: "))
+    product_id = input("Nhập mã sản phẩm cần cập nhật: ")
     for product in products:
-        if product[id] == product_id:
+        if product["id"] == product_id:
             print("Tìm thấy sản phẩm. Nhập thông tin mới: ")
             
             product["name"] = input("Tên sản phẩm mới: ")
             product["brand"] = input("Thương hiệu sản phẩm mới: ")
-            product["price"] = int(input("Giá mới: "))
-            product["quantity"] = int(input("Số lượng lưu kho: "))
+            product["price"] = input_positive_int("Giá mới: ")
+            product["quantity"] = input_positive_int("Số lượng lưu kho: ")
             
             print("Cập nhập sản phẩm thành công!")
             return products
@@ -72,7 +69,7 @@ def delete_product(products):
     product_id = int(input("Nhập mã sản phẩm cần xóa: "))
     for product in products:
         if product["id"] == product_id:
-            product.remove(product)
+            products.remove(product)
             print("Đã xóa sản phẩm thành công!")
             return products
     print("Không tìm thấy sản phẩm có mã: ",product_id)
@@ -92,6 +89,7 @@ def search_product_by_name(products):
         display_all_products(found_products)
     else:
         print("Không tìm thấy sả phẩm nào phù hợp từ khóa: ",keyword)
+
 # 7) Hiển thị toàn bộ sản phẩm
 def display_all_products(products):
     print("\n--- DANH SÁCH SẢN PHẨM ---")
@@ -110,6 +108,19 @@ def display_all_products(products):
         sl = p["quantity"]
         
         print("{:<5} | {:<30} | {:<15} | {:<12} | {:<5}".format(ma_id, ten, hang, gia, sl))
+        
+# Hàm nhập số nguyên không âm
+def input_positive_int(message):
+    while True:
+        try:
+            value = int(input(message))
+            if value < 0:
+                print("Không được nhập số âm! Vui lòng nhập lại.")
+                continue
+            return value
+        except ValueError:
+            print("Sai kiểu dữ liệu! Vui lòng nhập số nguyên.")
+
 
 
 
