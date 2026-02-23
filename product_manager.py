@@ -109,7 +109,7 @@ def display_all_products(products):
         
         print("{:<5} | {:<30} | {:<15} | {:<12} | {:<5}".format(ma_id, ten, hang, gia, sl))
         
-# Hàm nhập số nguyên không âm
+# 8Hàm nhập số nguyên không âm
 def input_positive_int(message):
     while True:
         try:
