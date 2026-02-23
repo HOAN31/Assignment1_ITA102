@@ -66,9 +66,9 @@ def update_product(products):
 
 # 5) Xóa sản phẩm
 def delete_product(products):
-    product_id = int(input("Nhập mã sản phẩm cần xóa: "))
+    product_id =input("Nhập mã sản phẩm cần xóa: ").lower()
     for product in products:
-        if product["id"] == product_id:
+        if product["id"].lower() == product_id:
             products.remove(product)
             print("Đã xóa sản phẩm thành công!")
             return products
@@ -121,6 +121,8 @@ def input_positive_int(message):
         except ValueError:
             print("Sai kiểu dữ liệu! Vui lòng nhập số nguyên.")
 
-
+# git add .
+# git commit -m "nội dung"
+# git push origin main
 
 
