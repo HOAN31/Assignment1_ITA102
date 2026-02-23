@@ -64,7 +64,16 @@ def update_product(products):
     print("Không tìm thấy sản phẩm có mã: ", product_id)
     return products
 
-
+# 5) Xóa sản phẩm
+def delete_product(products):
+    product_id =input("Nhập mã sản phẩm cần xóa: ").lower()
+    for product in products:
+        if product["id"].lower() == product_id:
+            products.remove(product)
+            print("Đã xóa sản phẩm thành công!")
+            return products
+    print("Không tìm thấy sản phẩm có mã: ",product_id)
+    return products
 
 # 6) Tìm kiếm sản phẩm theo tên
 def search_product_by_name(products):

@@ -19,8 +19,8 @@ def main():
             products = pm.add_product(products)
         elif choice == '2':
             pm.update_product(products)
-        # elif choice == '3':
-        #     pm.delete_product(products)
+        elif choice == '3':
+            pm.delete_product(products)
         elif choice == '4':
             pm.search_product_by_name(products)
         elif choice == '5':
