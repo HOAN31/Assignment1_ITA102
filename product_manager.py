@@ -56,21 +56,50 @@ def save_data(products):
 #     products.append(new_product) 
 #     print(f"Đã thêm sản phẩm {new_id} thành công!")
 #     return products
+# def add_product(products):
+#     products.id = len(products)+1
+#     name = input("Nhập tên sản phẩm mới: ")
+#     price = int(input("Nhập giá sản phẩm mới: "))
+#     brand = input("Nhập tên thương hiệu sản phẩm mới: ")
+#     quantity = int(input("Nhập số lượng sản phẩm mới: "))
+#     product ={
+#         "id":products.id,
+#         "name": name,
+#         "price": price,
+#         "brand": brand,
+#         "quantity": quantity
+#     }
+#     products.appen(product)
+#     return(products)
 def add_product(products):
-    products.id = len(products)+1
+    print("\n--- THÊM SẢN PHẨM MỚI ---")
+    
+    # 1. Tự động tạo mã sản phẩm mới dựa trên số lượng hiện có
+    # Ví dụ: nếu có 2 sản phẩm, mã mới sẽ là LT03
+    ma_so_moi = len(products) + 1
+    new_id = "LT" + str(ma_so_moi).zfill(2) 
+    
+    # 2. Nhập thông tin từ bàn phím
     name = input("Nhập tên sản phẩm mới: ")
-    price = int(input("Nhập giá sản phẩm mới: "))
-    brand = input("Nhập tên thương hiệu sản phẩm mới: ")
-    quantity = int(input("Nhập số lượng sản phẩm mới: "))
-    product ={
-        "id":products.id,
+    brand = input("Nhập tên thương hiệu: ")
+    price = int(input("Nhập giá sản phẩm: "))
+    quantity = int(input("Nhập số lượng tồn kho: "))
+    
+    # 3. Tạo dictionary cho sản phẩm mới
+    product = {
+        "id": new_id,
         "name": name,
-        "price": price,
         "brand": brand,
+        "price": price,
         "quantity": quantity
     }
-    products.appen(product)
-    return(products)
+    
+    # 4. Thêm vào danh sách và thông báo thành công
+    products.append(product)
+    print("Đã thêm sản phẩm mới với mã:", new_id)
+    
+    return products 
+    
     
 
 # # 4) Cập nhật sản phẩm
@@ -142,6 +171,19 @@ def delete_product(products):
 #         display_all_products(found_products)
 #     else:
 #         print("Không tìm thấy sản phẩm nào phù hợp.")
+def search_product_by_name(products):
+    print("\n---TÌM KIẾM SẢN PHẨM ---")
+    keyword = input("Nhập tên sản phẩm cần tìm: ").lower()
+    found_products = []
+    
+    for p in products:
+        if keyword in p["name"].lower():
+            found_products.append(p)
+    
+    if len(found_products) > 0:
+        display_all_products(found_products)
+    else:
+        print("Không tìm thấy sả phẩm nào phù hợp từ khóa: ",keyword)
 
 # # 7) Hiển thị toàn bộ sản phẩm
 # def display_all_products(products):
@@ -155,3 +197,20 @@ def delete_product(products):
 #     print("-" * 77)
 #     for p in products:
 #         print(f"{p['id']:<5} | {p['name']:<30} | {p['brand']:<15} | {p['price']:<12} | {p['quantity']:<5}") 
+def display_all_products(products):
+    print("\n--- DANH SÁCH SẢN PHẨM ---")
+    if len(products) == 0:
+        print("Danh sách rỗng!")
+        return
+    
+    print("Mã ID | Tên sản phẩm             | Thương hiệu     | Giá bán       | Số lượng ")
+    print("-"*80)
+
+    for p in products:
+        ma_id = p["id"]
+        ten = p["name"]
+        hang = p["brand"]
+        gia = p["price"]
+        sl = p["quantity"]
+        
+        print("{:<5} | {:<30} | {:<15} | {:<12} | {:<5}".format(ma_id, ten, hang, gia, sl))
