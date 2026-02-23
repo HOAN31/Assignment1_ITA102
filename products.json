@@ -1,30 +1,30 @@
 [
     {
-        "id": "LT01",
-        "name": "mu",
-        "brand": "gici",
-        "price": 70000,
-        "quantity": 32
+        "id": "LT00001",
+        "name": "Laptop Acer Aspire 5",
+        "brand": "Acer",
+        "price": 125000000,
+        "quantity": 20
     },
     {
-        "id": "LT02",
-        "name": "ao",
-        "brand": "guci",
-        "price": 60000,
-        "quantity": 71
+        "id": "LT00002",
+        "name": "MacBook Air M2",
+        "brand": "Apple",
+        "price": 18000000,
+        "quantity": 10
     },
     {
-        "id": "LT03",
-        "name": "mu",
-        "brand": "ligic",
-        "price": 20000,
-        "quantity": 61
+        "id": "LT00003",
+        "name": "Laptop Dell XPS 13",
+        "brand": "Dell",
+        "price": 30000000,
+        "quantity": 14
     },
     {
-        "id": "LT04",
-        "name": "giay",
-        "brand": "nike",
-        "price": 394000,
-        "quantity": 80
+        "id": "LT00004",
+        "name": "Laptop Gaming ASUS ROG",
+        "brand": "ASUS",
+        "price": 32000000,
+        "quantity": 5
     }
 ]

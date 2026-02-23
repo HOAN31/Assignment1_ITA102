@@ -25,7 +25,7 @@ def add_product(products):
     
     # 1. Tự động tạo mã sản phẩm mới dựa trên số lượng hiện có
     ma_so_moi = len(products) + 1
-    new_id = "LT" + str(ma_so_moi).zfill(2) 
+    new_id = "LT" + str(ma_so_moi).zfill(5) 
     
     name = input("Nhập tên sản phẩm mới: ")
     brand = input("Nhập tên thương hiệu: ")
