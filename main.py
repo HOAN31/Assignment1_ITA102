@@ -11,6 +11,7 @@ def main():
         print("3. Xóa sản phẩm")
         print("4. Tìm kiếm sản phẩm")
         print("5. Hiển thị tất cả sản phẩm")
+        print("6. Sap xep san pham")
         print("0. Thoát")
         
         choice = input("Nhập lựa chọn của bạn (0-5): ")
