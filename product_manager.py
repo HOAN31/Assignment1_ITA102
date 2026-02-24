@@ -1,5 +1,4 @@
 import json 
-from activity_log import log_add_product, log_delete_product, log_update_product
 FILE_NAME = "products.json"
 
 # 1) Tải dữ liệu từ file
@@ -43,7 +42,6 @@ def add_product(products):
     }
     
     products.append(product)
-    log_add_product(product)
     print("Đã thêm sản phẩm mới với mã:", new_id)
     
     return products 
@@ -59,8 +57,6 @@ def update_product(products):
             product["brand"] = input("Thương hiệu sản phẩm mới: ")
             product["price"] = input_positive_int("Giá mới: ")
             product["quantity"] = input_positive_int("Số lượng lưu kho: ")
-
-            log_update_product(product)
             
             print("Cập nhập sản phẩm thành công!")
             return products
@@ -74,7 +70,6 @@ def delete_product(products):
     for product in products:
         if product["id"].lower() == product_id:
             products.remove(product)
-            log_delete_product(product)
             print("Đã xóa sản phẩm thành công!")
             return products
     print("Không tìm thấy sản phẩm có mã: ",product_id)
