@@ -19,12 +19,5 @@
         "brand": "Dell",
         "price": 30000000,
         "quantity": 14
-    },
-    {
-        "id": "LT00004",
-        "name": "Laptop Gaming ASUS ROG",
-        "brand": "ASUS",
-        "price": 32000000,
-        "quantity": 5
     }
 ]
